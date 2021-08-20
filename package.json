@@ -24,9 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -o docs-build -s src/stories/assets",
-    "deploy-storybook": "storybook-to-ghpages" 
+    "storybook": "start-storybook -p 6006 -s public"
   },
   "eslintConfig": {
     "extends": [
@@ -64,6 +62,7 @@
     "@storybook/node-logger": "^6.4.0-alpha.21",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/storybook-deployer": "^2.8.10",
-    "@svgr/cli": "^5.5.0"
+    "@svgr/cli": "^5.5.0",
+    "chromatic": "^5.9.2"
   }
 }
