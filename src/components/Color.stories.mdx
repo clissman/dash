@@ -1,0 +1,109 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ColorPalette,
+  ColorItem,
+} from "@storybook/addon-docs";
+import { color } from "./global/styles";
+
+<Meta title="Particles/Color" />
+
+# Color
+
+- [Primary Colors](#primary-colors)
+- [Secondary Colors](#secondary-colors)
+- [Feedback Colors](#feedback-colors)
+- [Grays](#grays)
+
+## Primary Colors
+
+<ColorPalette>
+  <ColorItem
+    colors={[
+      color.primaryDark,
+      color.primary,
+      color.primaryLight,
+      color.primarySubtle,
+    ]}
+  />
+</ColorPalette>
+
+## Secondary Colors
+
+<ColorPalette>
+  <ColorItem
+    colors={[
+      color.secondaryDark,
+      color.secondary,
+      color.secondaryLight,
+      color.secondarySubtle,
+    ]}
+  />
+</ColorPalette>
+
+## Feedback Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Information"
+    colors={[
+      color.informationDark,
+      color.information,
+      color.informationLight,
+      color.informationSubtle,
+    ]}
+  />
+  <ColorItem
+    title="Warning"
+    colors={[
+      color.warningDark,
+      color.warning,
+      color.warningLight,
+      color.warningSubtle,
+    ]}
+  />
+  <ColorItem
+    title="Positive"
+    colors={[
+      color.positiveDark,
+      color.positive,
+      color.positiveLight,
+      color.positiveSubtle,
+    ]}
+  />
+  <ColorItem
+    title="Negative"
+    colors={[
+      color.negativeDark,
+      color.negative,
+      color.negativeLight,
+      color.negativeSubtle,
+    ]}
+  />
+</ColorPalette>
+
+## Grays
+
+<ColorPalette>
+  <ColorItem
+    title="Light Gray"
+    colors={[
+      color.white,
+      color.gray05,
+      color.gray10,
+      color.gray15,
+      color.gray25,
+    ]}
+  />
+  <ColorItem
+    title="Dark Gray"
+    colors={[
+      color.gray55,
+      color.gray60,
+      color.gray80,
+      color.gray90,
+      color.black,
+    ]}
+  />
+</ColorPalette>
