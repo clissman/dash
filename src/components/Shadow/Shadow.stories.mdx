@@ -1,0 +1,42 @@
+import { Meta, Story, ArgsTable } from '@storybook/addon-docs';
+import { color } from '../shared/styles'
+import { Shadow } from './Shadow'
+
+<Meta title="Particles/Shadows" component={Shadow} decorators={[
+    (Story) => (
+      <div
+        style={{
+          display: "flex",
+          width: "500px",
+          height: "250px",
+          background: "#EAEDEE",
+          justifyContent: "center",
+          alignItems: "center",
+          overflow: "hidden"
+        }}
+      >
+        <Story />
+      </div>
+    )
+    ]}
+ />
+
+# Shadows
+
+- [Additional Information](#additional-information)
+- [Further Reading](#further-reading)
+- [Conclusion](#conclusion)
+
+Use shadows to:
+
+- Emphasize active content
+- Creative levels of interest
+- Deemphasize other content
+
+<Story name="Shadows">
+    {(args) => <Shadow {...args} />}
+</Story>
+
+<br/>
+
+<ArgsTable story="Shadows" />
