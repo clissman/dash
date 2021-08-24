@@ -1,13 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
-import { color } from "../shared/styles"
+import { color } from "../shared/styles";
+import AvatarInitial from "./AvatarInitial";
 
 export const sizes = {
-  tiny: 20,
-  small: 28,
-  medium: 40,
-  max: 64,
+  xxxs: 16,
+  xxs: 20,
+  xs: 24,
+  s: 28,
+  m: 32,
+  l: 40,
+  xl: 48,
+  xxl: 64,
 };
 
 const Image = styled.div`
@@ -19,7 +24,8 @@ const Image = styled.div`
   background-color: transparent;
 
   ${(props) =>
-    (!props.src && !props.isLoading) &&
+    !props.src &&
+    !props.isLoading &&
     css`
       background-color: ${color.secondary};
       color: white;
@@ -42,26 +48,22 @@ const Image = styled.div`
   }
 `;
 
-const Initial = styled.div`
-  font-size: 36px;
-  color: white;
-  font-family: Arial;
-  font-weight: bold;
-  text-transform: uppercase;
-`;
-
 export default function Avatar({
   username,
   src,
-  size = "medium",
+  size = "m",
   isLoading,
   isStacking,
   ...props
 }) {
+  let initials = username.split(" ").map((name) => {
+    return name.substring(0, 1);
+  });
+
   let avatar = src ? (
     <img src={src} alt={username} />
   ) : (
-    <Initial>{username.substring(0, 1)}</Initial>
+    <AvatarInitial size={size}>{initials}</AvatarInitial>
   );
 
   if (isLoading) avatar = <img src="skeleton.svg" alt={"loading"} />;
@@ -78,14 +80,17 @@ export default function Avatar({
       {avatar}
     </Image>
   );
-};
+}
 
 Avatar.propTypes = {
-  /** Provide the size of the avatar */
-  size: PropTypes.oneOf(["tiny", "small", "medium", "max"]),
-  isLoading: PropTypes.bool,
+  /** Provide the size of the Avatar */
+  size: PropTypes.oneOf(["xxxs", "xxs", "xs", "s", "m", "l", "xl", "xxl"]),
+  /** Provide the user's name. The user's initials will be used if no image is provided */
   username: PropTypes.string.isRequired,
+  /** Skeleton image if the Avatar image is loading */
+  isLoading: PropTypes.bool,
+  /** Adds border and margin to the Avatar so it overlaps clearly */
   isStacking: PropTypes.bool,
+  /** The user's portrait. If no image is provided, initials from username are used*/
   src: PropTypes.string,
 };
-

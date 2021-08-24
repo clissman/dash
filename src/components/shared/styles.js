@@ -15,7 +15,7 @@ export const color = {
   secondary: "#DF207B",
   secondaryLight: "#EF82B7",
   secondarySubtle: "#FFF2F8",
-  
+
   white: "#FFF",
   gray05: "#F1F3F4",
   gray10: "#E3E6E8",
@@ -80,7 +80,7 @@ export const typography = {
     label1: 17,
     label2: 15,
     body1: 24,
-    body2: 18,
+    body2: 20,
     buttonLarge: 21,
     buttonMedium: 16,
     buttonSmall: 12,
@@ -131,14 +131,29 @@ export const Body1 = () => css`
   font-family: ${family.primary};
   font-size: ${size.body1}px;
   line-height: ${lineHeight.body1}px;
+  font-weight: ${weight.regular};
 `;
 
 export const Body2 = () => css`
   font-family: ${family.primary};
   font-size: ${size.body2}px;
   line-height: ${lineHeight.body2}px;
+  font-weight: ${weight.regular};
 `;
 
+export const Heading5 = () => css`
+  font-family: ${family.primary};
+  font-size: ${size.h5}px;
+  line-height: ${lineHeight.h5}px;
+  font-weight: ${weight.semiBold};
+`;
+
+export const Subtitle1 = () => css`
+  font-family: ${family.primary};
+  font-size: ${size.subtitle1}px;
+  line-height: ${lineHeight.subtitle1}px;
+  font-weight: ${weight.semiBold};
+`;
 
 export const ButtonSmall = () => css`
   font-family: ${family.primary};

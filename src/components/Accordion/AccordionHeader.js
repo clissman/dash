@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import styled, { css } from "styled-components";
 import { typography, color } from "../shared/styles";
-import ChevronDown from "../Icons/ChevronDown"
+import ChevronDown from "../Icons/ChevronDown";
 
 const { size, family, weight } = typography;
 
@@ -17,9 +17,9 @@ const StyledAccordionHeader = styled.button`
   margin: 0;
   width: 100%;
   cursor: pointer;
-  color: ${color.gray60};
+  color: ${color.gray55};
   &:hover {
-    color: ${color.gray80};
+    color: ${color.gray90};
   }
   ${(props) =>
     props.isOpen &&
@@ -43,6 +43,7 @@ const Header = styled.p`
 `;
 
 const Arrow = styled.div`
+  color: initial;
   transition: transform 0.2s;
   ${(props) =>
     props.isOpen &&
@@ -51,7 +52,7 @@ const Arrow = styled.div`
     `}
 `;
 
-export default function AccordionHeader({ children, onClick, isOpen=false }) {
+export default function AccordionHeader({ children, onClick, isOpen = false }) {
   return (
     <StyledAccordionHeader onClick={onClick} isOpen={isOpen}>
       <Header>{children}</Header>
@@ -60,10 +61,10 @@ export default function AccordionHeader({ children, onClick, isOpen=false }) {
       </Arrow>
     </StyledAccordionHeader>
   );
-};
+}
 
 AccordionHeader.propTypes = {
   isOpen: PropTypes.bool,
   children: PropTypes.any,
-  onClick: PropTypes.any
-}
+  onClick: PropTypes.any,
+};

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
-import Loading from '../Loading/Loading'
+import Loading from "../Loading/Loading";
 import {
   color,
   ButtonLarge,
@@ -9,24 +9,24 @@ import {
   ButtonSmall,
 } from "../shared/styles";
 
-
 const StyledButton = styled.button`
   display: flex;
+  align-self: flex-start;
   border-radius: 2px;
   box-sizing: border-box;
-  transition: 0.2s;
+  transition: background 0.2s, border 0.2s;
   padding: 8px 16px;
   border: 2px solid;
   border-radius: 4px;
   cursor: pointer;
   outline: none;
 
-  &:focus {
+  &:focus-visible {
     box-shadow: 0 0 0 4px ${color.primaryLight};
   }
 
   & > svg {
-    margin-right: ${(props) => !props.isIconOnly && "8px"}
+    margin-right: ${(props) => !props.isIconOnly && "8px"};
   }
 
   ${(props) =>
@@ -112,7 +112,7 @@ export default function Button({
   disabled,
   ...props
 }) {
-const isIconOnly = typeof children !== "string" && !(children.length >= 1);
+  const isIconOnly = typeof children !== "string" && !(children.length >= 1);
   return (
     <StyledButton
       as="button"
@@ -122,7 +122,7 @@ const isIconOnly = typeof children !== "string" && !(children.length >= 1);
       isIconOnly={isIconOnly}
       {...props}
     >
-    {isLoading && <Loading />}
+      {isLoading && <Loading />}
       {children}
     </StyledButton>
   );

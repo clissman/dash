@@ -2,11 +2,9 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { color, Body1 } from "../shared/styles";
 
-
-
 const Paragraph = styled.p`
   ${Body1};
-  color: ${color.gray80};
+  color: ${color.gray90};
 `;
 
 const StyledAccordionParagraph = styled.div`
@@ -28,4 +26,4 @@ export default function AccordionParagraph({ children, isOpen }) {
       <Paragraph>{children}</Paragraph>
     </StyledAccordionParagraph>
   );
-};
+}

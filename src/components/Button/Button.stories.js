@@ -15,17 +15,64 @@ export default {
 };
 
 export const PrimaryLarge = {
-  args: { children: 'Button'},
+  args: { children: "Button" },
 };
 
-export const LargeIconOnly = () => (
-  <Button variant="primary" size="large" aria-label="favorite">
+export const FocusedNonPointingDevice = () => (
+  <div
+    style={{
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-around",
+    }}
+  >
+    <Button
+      style={{ boxShadow: "0 0 0 4px #889ff1" }}
+      variant="primary"
+      size="medium"
+    >
+      Primary
+    </Button>
+    <Button
+      style={{ boxShadow: "0 0 0 4px #889ff1" }}
+      variant="secondary"
+      size="medium"
+    >
+      Secondary
+    </Button>
+    <Button
+      style={{ boxShadow: "0 0 0 4px #889ff1" }}
+      variant="transparent"
+      size="medium"
+    >
+      Transparent
+    </Button>
+    <Button
+      style={{ boxShadow: "0 0 0 4px #889ff1" }}
+      variant="transparent"
+      size="medium"
+      isLoading
+    >
+      Loading
+    </Button>
+  </div>
+);
+
+export const IconOnly = () => (
+  <Button variant="primary" size="medium" aria-label="favorite">
     <HeartOutline />
   </Button>
 );
 
-export const LargeIconAndText= () => (
-  <Button variant="primary" size="large">
+export const IconAndText = () => (
+  <Button variant="primary" size="medium">
+    <HeartOutline />
+    Button
+  </Button>
+);
+
+export const Disabled = () => (
+  <Button variant="primary" size="medium" disabled>
     <HeartOutline />
     Button
   </Button>
@@ -38,9 +85,16 @@ export const SmallIconAndText = () => (
   </Button>
 );
 
-export const MediumIconAndTextDisabled = () => (
-  <Button variant="primary" size="medium" disabled>
-    <HeartOutline />
+export const PrimaryLoading = () => (
+  <Button variant="primary" size="medium">
+    <Loading />
+    Button
+  </Button>
+);
+
+export const TransparentLoading = () => (
+  <Button variant="secondary" size="medium">
+    <Loading />
     Button
   </Button>
 );
@@ -49,26 +103,5 @@ export const Fun = () => (
   <Button variant="transparent" size="medium">
     <HeartFill color="tomato" />
     Button
-  </Button>
-);
-
-export const RegularAndLoading = () => (
-  <Button variant="primary" size="medium">
-    <Loading />
-    Test
-  </Button>
-)
-
-export const LargeAndLoading = () => (
-  <Button variant="primary" size="large">
-    <Loading />
-    Test
-  </Button>
-);
-
-export const TransparentAndLoading = () => (
-  <Button variant="secondary" size="small">
-    <Loading />
-    Test
   </Button>
 );

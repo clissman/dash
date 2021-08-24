@@ -4,17 +4,25 @@ import Button from "../Button/Button";
 export default {
   title: "Components/ButtonGroup",
   component: ButtonGroup,
+  subcomponents: { Button },
   args: {
-      spacing: "tight"
+    spacing: "tight",
   },
   argTypes: {
     children: {
-            control: null
-        }
-    }
+      control: null,
+    },
+  },
 };
 
-export const Default = {args: {children: [<Button>One</Button>, <Button variant="secondary">Two</Button>]}}
+export const Default = {
+  args: {
+    children: [
+      <Button>Button One</Button>,
+      <Button variant="secondary">Button Two</Button>,
+    ],
+  },
+};
 
 export const SmallWithTransparent = {
   args: {

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import React from 'react'
-import styled, { css } from 'styled-components'
+import React from "react";
+import styled, { css } from "styled-components";
 
 const StyledButtonGroup = styled.span`
   display: inline-flex;
@@ -28,16 +28,14 @@ const StyledButtonGroup = styled.span`
   }
 `;
 
-export default function ButtonGroup({ children, spacing = 'tight' }) {
-    const keyedButtons = React.Children.toArray(children)
-    return (
-        <StyledButtonGroup spacing={spacing}>
-            {keyedButtons}
-        </StyledButtonGroup>
-    )
+export default function ButtonGroup({ children, spacing = "loose" }) {
+  const keyedButtons = React.Children.toArray(children);
+  return (
+    <StyledButtonGroup spacing={spacing}>{keyedButtons}</StyledButtonGroup>
+  );
 }
 
 ButtonGroup.propTypes = {
   children: PropTypes.array.isRequired,
-  spacing: PropTypes.oneOf(["veryLoose", "loose", "tight", "veryTight"])
-}
+  spacing: PropTypes.oneOf(["veryLoose", "loose", "tight", "veryTight"]),
+};
